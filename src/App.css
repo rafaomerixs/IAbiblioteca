@@ -1,0 +1,612 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3f6fc;
+  color: #17243c;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #22b8d5;
+  outline-offset: 3px;
+}
+
+/* ESTRUTURA */
+
+.app {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+  width: 255px;
+  min-width: 255px;
+  background: #101c35;
+  color: #ffffff;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.brand strong {
+  font-size: 23px;
+}
+
+.brand small {
+  display: block;
+  color: #9caecb;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar nav button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: #d7e2f5;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.sidebar nav button:hover,
+.sidebar nav button.ativo {
+  background: #243859;
+  color: #ffffff;
+}
+
+.contagem {
+  margin-left: auto;
+  background: #334b6c;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  color: #8196b9;
+  font-size: 12px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 30px 45px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 30px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.status {
+  color: #0e9e76;
+  font-weight: 600;
+}
+
+/* ÁREA PRINCIPAL */
+
+.hero {
+  background: linear-gradient(
+    120deg,
+    #152b52,
+    #175f90
+  );
+  border-radius: 22px;
+  padding: 65px 50px;
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(20, 48, 88, 0.12);
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #24b9d4;
+  margin: 0 0 15px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: #ffffff;
+}
+
+.hero-content > p:not(.eyebrow) {
+  color: #d5e6f5;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* PESQUISA */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 7px;
+  border-radius: 12px;
+  gap: 8px;
+  max-width: 800px;
+}
+
+.search-icon {
+  margin-left: 12px;
+  color: #7890aa;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 6px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #17243c;
+}
+
+.search-box button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #08a9cb;
+  color: #ffffff;
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 20px;
+  font-weight: 700;
+}
+
+.search-box button:hover {
+  background: #078dab;
+}
+
+.hero-content .search-hint {
+  font-size: 13px !important;
+  margin: 14px 0 0 !important;
+  color: #b9d8ee !important;
+}
+
+/* CURSOS */
+
+.courses-section,
+.results-section {
+  margin-top: 45px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 23px;
+}
+
+.section-heading h2 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.total {
+  color: #738199;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  background: #ffffff;
+  border: 1px solid #e5eaf3;
+  border-radius: 16px;
+  padding: 24px 19px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 195px;
+  box-shadow: 0 5px 18px rgba(20, 40, 80, 0.04);
+  transition: 0.2s;
+  color: #17243c;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  border-color: #08a9cb;
+  box-shadow: 0 12px 25px rgba(20, 40, 80, 0.1);
+}
+
+.course-icon {
+  color: #0a91b6;
+  background: #e9f7fc;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+}
+
+.course-card strong {
+  font-size: 16px;
+}
+
+.course-card > span:not(.course-icon) {
+  color: #738199;
+  font-size: 13px;
+}
+
+.course-card small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #098cb2;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* HISTÓRICO */
+
+.history-section {
+  margin-top: 35px;
+}
+
+.history-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.history-list button {
+  background: #ffffff;
+  border: 1px solid #dce5f2;
+  border-radius: 20px;
+  padding: 10px 16px;
+  color: #365477;
+  font-size: 13px;
+}
+
+.history-list button:hover {
+  background: #e9f7fc;
+}
+
+/* FILTROS */
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  color: #60758e;
+}
+
+.filters label {
+  font-size: 14px;
+}
+
+.filters select {
+  padding: 10px 12px;
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #17243c;
+}
+
+.limpar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  color: #087c9a;
+  padding: 8px;
+}
+
+/* CARTÕES DOS LIVROS */
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: #ffffff;
+  border: 1px solid #e5eaf3;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 18px rgba(20, 40, 80, 0.05);
+}
+
+/* CAPAS REAIS */
+
+.book-cover {
+  background: linear-gradient(
+    135deg,
+    #d9f2fc,
+    #e7eaff
+  );
+  color: #216f9d;
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.book-cover img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  padding: 12px;
+}
+
+/* INFORMAÇÕES DO LIVRO */
+
+.book-info {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.book-category {
+  color: #098cb2;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.book-info h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.book-info p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.book-info .book-author {
+  font-weight: 600;
+}
+
+/* BOTÕES DOS LIVROS */
+
+.book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.book-actions button,
+.book-details .voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #142b50;
+  color: #ffffff;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 14px;
+}
+
+.book-actions button:hover,
+.book-details .voltar:hover {
+  background: #205184;
+}
+
+.book-actions .favorite-button {
+  min-width: 45px;
+}
+
+.book-actions .favorite-button.favoritado {
+  color: #ffb6bd;
+}
+
+/* DETALHES DO LIVRO */
+
+.book-details {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  line-height: 1.7;
+}
+
+.book-details h3 {
+  font-size: 26px;
+}
+
+.book-details .voltar {
+  margin-bottom: 24px;
+}
+
+/* CAPA NOS DETALHES */
+
+.capa-detalhe {
+  max-width: 200px;
+  margin-bottom: 18px;
+}
+
+.capa-detalhe .book-cover {
+  border-radius: 12px;
+}
+
+/* AVISOS */
+
+.nota {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.empty-state {
+  background: #ffffff;
+  border: 1px solid #e5eaf3;
+  border-radius: 16px;
+  padding: 35px;
+  text-align: center;
+  color: #60758e;
+}
+
+.empty-state h3 {
+  color: #17243c;
+}
+
+/* RODAPÉ */
+
+.footer {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  padding: 50px 0 15px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1150px) {
+  .courses-grid,
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar nav button {
+    width: auto;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 35px 22px;
+  }
+
+  .search-box {
+    flex-wrap: wrap;
+  }
+
+  .search-box input {
+    flex-basis: 75%;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .courses-grid,
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  .total {
+    white-space: normal;
+  }
+}
